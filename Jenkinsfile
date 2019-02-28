@@ -1,11 +1,15 @@
 #!groovy
 node ('windows') {
+      tools {
+        maven 'M3'
+        jdk 'JDK 1.8'
+    }
   stage ('Build') {
     def scmVars = checkout scm
     eraseSnapForMasterBranch scmVars.GIT_BRANCH
 
     try {
-      sh '${M3}/bin/mvn clean deploy'
+      sh 'mvn clean deploy'
     } finally {
       junit 'target/surefire-reports/*.xml'
     }
