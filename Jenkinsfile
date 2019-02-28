@@ -1,5 +1,5 @@
 #!groovy
-node ('M3') {
+node ('windows') {
   stage ('Build') {
     def scmVars = checkout scm
     eraseSnapForMasterBranch scmVars.GIT_BRANCH
