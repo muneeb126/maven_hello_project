@@ -39,4 +39,4 @@ def eraseSnapForMasterBranch(branchName) {
     writeMavenPom pom
   }
 }
-
+}
